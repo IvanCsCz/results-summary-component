@@ -86,10 +86,6 @@ body {
   width: 368px;
   height: 512px;
   padding: 38px 40px 46px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 
 .card-summary-title {
@@ -106,15 +102,21 @@ body {
 
 .card-summary-component {
   padding: 18px 16px;
-  width: 288px;
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
   border-radius: 12px;
 }
 
+.card-summary-component img:first-child {
+  margin-right: 12px;
+}
+
+.card-summary-component span:nth-child(3n) {
+  margin-left: auto;
+  margin-right: 8px;
+}
+
 .card-summary-component-name {
-  width: 71px;
-  margin-left: 12px;
   font-size: 18px;
   font-weight: 500;
 }
@@ -171,14 +173,12 @@ body {
 }
 
 .card-summary-component-score {
-  margin-left: 81px;
   font-size: 18px;
   font-weight: 700;
   color: #303b59;
 }
 
 .card-summary-component-score-limit {
-  margin-left: 8px;
   font-size: 18px;
   font-weight: 700;
   color: #303b59;
@@ -197,8 +197,63 @@ body {
 
 .card-summary-button:hover {
   cursor: pointer;
-  background: var(
-    --Gradient-1,
-    linear-gradient(180deg, #75f 0%, #6943ff 0.01%, #2f2ce9 100%)
-  );
+  background: linear-gradient(180deg, #75f 0%, #6943ff 0.01%, #2f2ce9 100%);
+}
+
+@media (max-width: 800px) {
+  body {
+    place-content: start;
+  }
+  .card {
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .card-result {
+    width: 100vw;
+    height: 356px;
+    border-radius: 0px 0px 32px 32px;
+  }
+
+  .card-result-title {
+    margin-top: 24px;
+    font-size: 18px;
+  }
+
+  .oval {
+    width: 140px;
+    height: 140px;
+    margin-top: 24px;
+    background-image: url('./assets/images/icon-oval-mobile.svg');
+  }
+
+  .oval-score {
+    font-size: 56px;
+    line-height: 72px;
+  }
+
+  .oval-limit {
+    font-size: 16px;
+  }
+
+  .card-result-average {
+    margin-top: 24px;
+    font-size: 24px;
+  }
+
+  .card-result-information {
+    font-size: 16px;
+  }
+
+  .card-summary {
+    width: 100vw;
+  }
+
+  .card-summary-components {
+    width: 85vw;
+  }
+
+  .card-summary-button {
+    width: 85vw;
+  }
 }
