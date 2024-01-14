@@ -13,6 +13,7 @@ body {
   background-color: #ecf2ff;
   min-height: 100vh;
   min-width: 375px;
+  max-width: 100%;
   display: grid;
   place-content: center;
 }
